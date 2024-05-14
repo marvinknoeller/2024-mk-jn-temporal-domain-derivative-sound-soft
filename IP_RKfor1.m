@@ -383,7 +383,7 @@ for it = 1 : 5
     end
     %%
     if save_results == 1
-	    clearvars boundarydata boundarymat fprimenew Fshape fprime
+	    clearvars boundarydata boundarymat fprimenew Fshape fprime beta0 lambdastages uincm uincp unu_ell uscat uscat_ell uscatVar
         save(strcat('Paper1/',name,'.mat'));
         clearvars -except rads it
     end
