@@ -61,7 +61,7 @@ if nargin >=3
 
         %% From here: Plot settings
         limu = max(utotalvis(:));
-        limd = min(utotalvis(:));
+        % limd = min(utotalvis(:));
         Tri = mesh.Elements.';
         fig=figure(700);
         fig.Position = [608 110 478 460];
@@ -80,14 +80,15 @@ if nargin >=3
             ax.YLim = [-7,7];
             ax.FontSize = 20;
             view(2)
-            ax.CLim = [-.5,.5];
+            % ax.CLim = [-.5,.5];
             if visualize == 1
-                ax.CLim = [-1.25,1.25];
+                ax.CLim = [-.7,.7];
             elseif visualize == 2
                 ax.CLim = [-.3,.3];
             end
             colormap(bone)
             shading interp, shg
+            if visualize == 1
             if timepoints(kk) == 0
                 text(.9,5.4,limu+1,...
                     [strcat(" time t = ", num2str((num-1)*Var.T/Var.M)), '(Initial state)'],...
@@ -99,9 +100,24 @@ if nargin >=3
                     'FontSize',24,'Interpreter','Latex',...
                     'EdgeColor','w','LineStyle','-','LineWidth',1.5,'Margin',6,'Color','w')
             end
+            elseif visualize == 2
+                if timepoints(kk) == 0
+                text(.9,5.4,limu+1,...
+                    [strcat(" time t = ", num2str((num-1)*Var.T/Var.M)), '(Initial state)'],...
+                    'FontSize',24,'Interpreter','Latex',...
+                    'EdgeColor','k','LineStyle','-','LineWidth',1.5,'Margin',6,'Color','k')
+            else
+                text(.9,5.4,limu+1,...
+                    strcat(" time t = ", num2str(round((num-1)*Var.T/Var.M,2),'%.2f')),...
+                    'FontSize',24,'Interpreter','Latex',...
+                    'EdgeColor','k','LineStyle','-','LineWidth',1.5,'Margin',6,'Color','k')
+            end
+            end
             ax.XTick = -6:2:6;
             ax.YTick = -6:2:6;
-            exportgraphics(ax,strcat(videoname,'PlotNr',num2str(kk),'.png'),'Resolution',300)
+            set(gcf,'renderer','painters') 
+            saveas(gcf,strcat('plots/','PlotNr',num2str(kk),num2str(visualize)),'epsc')
+            % exportgraphics(ax,strcat(videoname,'PlotNr',num2str(kk),'.png'),'Resolution',300)
             pause(1)
         end
 
