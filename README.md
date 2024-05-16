@@ -30,6 +30,7 @@ All **.m** files have a short description at the beginning of the script. Here, 
 - F_op.m : Returns SV^{-1}b, what is required during the convolution quadrature method.
 - HelmholtzPotentials.m : Returns the single layer operator S as a function handle.
 - ip_RK_for* : Runs the direct and afterward the inverse scattering problem based on the RK-CQ method. 
+    ip_RK_for* would also support the golden section line search as a line search method. This is however not used in the work.
     Note that the results of IP_RKfor1_double.m are not shown in the work. It is however described in Example 1. 
 - PlotIterates.m : Plots exact object and the current iterate given some iteration numbers.
 - RKdata.m : Returns the coefficients of the RK method.
