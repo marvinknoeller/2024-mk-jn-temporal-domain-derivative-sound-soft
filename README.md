@@ -47,7 +47,8 @@ All **.m** files have a short description at the beginning of the script. Here, 
 - mysignal.m & mysignalp.m : Returns function handles for the function f required to set up the incident wave and its derivative.
 - planewaveRK.m & pulseRK.m : Returns the incident wave in the case of a plane wave and a pulse.
 - starshapespline.m : Returns the discrete geometry required to describe the obstacles.
-[] The folder Precomputed_results includes all the precomputed results that we obtained in order to generate Figure 3,4 and 6.
+
+The folder Precomputed_results includes all the precomputed results that we obtained in order to generate Figure 3,4 and 6.
     In each folder the simulations 2-5 correspond to noisy data. The outcome is not shown in the work, only described in the last remark.
 
 ## Requirements and additional information
