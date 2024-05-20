@@ -54,6 +54,7 @@ The folder Precomputed_results includes all the precomputed results that we obta
 
 ## Requirements and additional information
 
+Requires the Matlab Parallel Computing Toolbox.
 The simulations have been carried out on clusters using 32, 64 or 128 cores.
 Computations have been carried out using the Matlab 2021a version.
 Running one simulation takes 1-2 days. 
